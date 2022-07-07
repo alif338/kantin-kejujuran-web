@@ -1,8 +1,33 @@
+import axios from 'axios';
 import Head from 'next/head'
 import Image from 'next/image'
+import { useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
+
 export default function Home() {
+  useEffect(() => {
+    axios.get('/api/connectDB').then(res => {
+      console.log(res.data.message);
+    }).catch(err => {
+      console.log(err);
+    })
+  }, []);
+
+  const handleClick = () => {
+    axios.post('/api/test_db', {
+      name: 'Transaction Test Called second',
+      price: '$10000',
+      description: 'This is a test transaction',
+      imageUrl: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+      created_at: '2020-01-01'
+    }, {headers: {'Content-Type': 'application/json'}}).then(res => {
+      console.log(res.data);
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -50,6 +75,7 @@ export default function Home() {
             </p>
           </a>
         </div>
+        <button onClick={handleClick}>test db</button>
       </main>
 
       <footer className={styles.footer}>
