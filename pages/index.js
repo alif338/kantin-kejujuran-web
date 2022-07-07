@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 import styles from '../styles/Home.module.css'
 
-
 export default function Home() {
   useEffect(() => {
     axios.get('/api/connectDB').then(res => {
@@ -16,7 +15,7 @@ export default function Home() {
 
   const handleClick = () => {
     axios.post('/api/test_db', {
-      name: 'Transaction Test Called second',
+      name: 'Transaction 08/07/2022 Test Called second',
       price: '$10000',
       description: 'This is a test transaction',
       imageUrl: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',

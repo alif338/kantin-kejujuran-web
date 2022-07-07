@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const MONGO_URI = 'mongodb+srv://alif338:test123@cluster0.smf7h.mongodb.net/sea';
+const MONGO_URI = process.env.MONGODB_URL;
 
 export default function handler(req, res) {
   mongoose.connect(MONGO_URI)
