@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Header() {
@@ -8,8 +9,9 @@ export default function Header() {
       </div>
 
       <div className={styles.nav_buttons}>
-        <a href="/" className={styles.padright}>Katalog</a>
-        <a href="/transaction">Balance & Riwayat transaksi</a>
+        <Link href="/">Katalog</Link>
+        <div className={styles.spacer}></div>
+        <Link href="/transaction">Balance & Riwayat transaksi</Link>
       </div>
 
       <div className={styles.nav_account}>

@@ -8,7 +8,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -24,6 +24,32 @@
   padding: 1rem 1.5rem;
 }
 
+.header_title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header_title button {
+  background-color: #2964C0;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header_title button:hover{
+  background-color: #1f509e;
+}
+
 .nav_logo {
   font-weight: bold;
   color: #122D58;
@@ -34,11 +60,10 @@
 .nav_buttons {
   font-size: 1.2rem;
   display: flex;
-  justify-content: space-between;
 }
 
-.padright {
-  padding-right: 2rem;
+.spacer {
+  width: 50px;
 }
 
 .nav_buttons a {
@@ -60,9 +85,13 @@
   width: 220px;
   border-radius: 5px;
   background: #BDD2F3;
-  padding: 0 5px;
+  padding: 0 15px;
   display: inline-flex;
   align-items: center;
+}
+
+.nav_account:hover {
+  background: #96aed6;
 }
 
 .nav_account p {
@@ -75,7 +104,7 @@
 }
 
 .accountImage {
-  padding: 0 10px;
+  padding-right: 10px;
 }
 
 .accountInfo {
@@ -147,21 +176,15 @@
 
 .card {
   margin: 1rem;
-  padding: 1.5rem;
+  padding: 10px;
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
   border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #BDD2F3;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
 }
 
 .card h2 {
@@ -173,6 +196,14 @@
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
+}
+
+.item_desc {
+  display: flex;
+}
+
+.item_desc_text {
+  padding-left: 10px;
 }
 
 .logo {
