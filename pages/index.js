@@ -2,16 +2,17 @@ import axios from 'axios';
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect } from 'react'
+import Header from '../components/Header';
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  useEffect(() => {
-    axios.get('/api/connectDB').then(res => {
-      console.log(res.data.message);
-    }).catch(err => {
-      console.log(err);
-    })
-  }, []);
+  // useEffect(() => {
+  //   axios.get('/api/connectDB').then(res => {
+  //     console.log(res.data.message);
+  //   }).catch(err => {
+  //     console.log(err);
+  //   })
+  // }, []);
 
   const handleClick = () => {
     axios.post('/api/test_db', {
@@ -36,6 +37,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <Header/>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>

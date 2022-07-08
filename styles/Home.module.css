@@ -4,12 +4,84 @@
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 1rem;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.navbar {
+  height: 100px;
+  width: 100%;
+  background-color: #6A90CD;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 1rem 1.5rem;
+}
+
+.nav_logo {
+  font-weight: bold;
+  color: #122D58;
+  font-size: 18pt;
+  text-transform: uppercase;
+}
+
+.nav_buttons {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.padright {
+  padding-right: 2rem;
+}
+
+.nav_buttons a {
+  color: #122D58;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav_buttons a:hover,
+.nav_buttons a:active,
+.nav_buttons a:focus {
+  text-decoration: underline;
+  color: #122D58;
+}
+
+.nav_account {
+  color: #515151;
+  height: 100%;
+  width: 220px;
+  border-radius: 5px;
+  background: #BDD2F3;
+  padding: 0 5px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav_account p {
+  line-height: 1;
+  margin: 0;
+  padding-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.accountImage {
+  padding: 0 10px;
+}
+
+.accountInfo {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .footer {
@@ -70,7 +142,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 80%;
 }
 
 .card {

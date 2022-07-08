@@ -1,0 +1,27 @@
+import styles from '../styles/Home.module.css'
+
+export default function Header() {
+  return (
+    <header className={styles.navbar}>
+      <div className={styles.nav_logo}>
+        kantin <br></br> Kejujuran
+      </div>
+
+      <div className={styles.nav_buttons}>
+        <a href="/" className={styles.padright}>Katalog</a>
+        <a href="/transaction">Balance & Riwayat transaksi</a>
+      </div>
+
+      <div className={styles.nav_account}>
+        <div className={styles.accountImage}>
+          <img src="/assets/images/download.png" width={30} height={30} />
+        </div>
+        <div className={styles.accountInfo}>
+          <p>12345</p>
+          <p>Muhammad Alif Darmamulia</p>
+        </div>
+        <img src="/assets/icons/VectorDropdown.png" width={15} height={8} />
+      </div>
+    </header>
+  )
+}
