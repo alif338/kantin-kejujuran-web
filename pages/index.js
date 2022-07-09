@@ -8,13 +8,14 @@ import styles from '../styles/Home.module.css'
 import { faker } from '@faker-js/faker';
 
 export default function Home() {
-  // useEffect(() => {
-  //   axios.get('/api/connectDB').then(res => {
-  //     console.log(res.data.message);
-  //   }).catch(err => {
-  //     console.log(err);
-  //   })
-  // }, []);
+  useEffect(() => {
+    // axios.get('/api/connectDB').then(res => {
+    //   console.log(res.data.message);
+    // }).catch(err => {
+    //   console.log(err);
+    // })
+    console.log(process.env.MONGODB_URL);
+  }, []);
 
   const handleClick = () => {
     axios.post('/api/test_db', {
@@ -42,7 +43,7 @@ export default function Home() {
         <Header/>
         <div className={styles.header_title}>
           <h1>Item Tersedia</h1>
-          <button className={styles.primary_button}>+ Tambah item</button>
+          <button className={styles.primary_button} onClick={handleClick}>+ Tambah item</button>
         </div>
         <div className={styles.grid}>
           <Card/>
@@ -52,7 +53,6 @@ export default function Home() {
           <Card/>
           <Card/>
         </div>
-        <button onClick={handleClick}>test db</button>
       </main>
 
       <footer className={styles.footer}>
