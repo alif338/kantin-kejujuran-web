@@ -1,6 +1,5 @@
 import axios from 'axios';
 import Head from 'next/head'
-import {Head as HeadDoc} from 'next/document'
 import Image from 'next/image'
 import { useEffect } from 'react'
 import Card from '../components/Card';
