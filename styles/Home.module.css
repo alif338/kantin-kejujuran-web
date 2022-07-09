@@ -1,3 +1,7 @@
+@keyframes dropdown {
+  
+}
+
 .container {
   padding: 0 2rem;
 }
@@ -24,6 +28,30 @@
   padding: 1rem 1.5rem;
 }
 
+.nav_dropdown {
+  height: 60px;
+  width: 150px;
+  background: aquamarine;
+  z-index: 10;
+  padding: 1rem;
+  position: absolute;
+  margin-block-start: 3px;
+  border-radius: 5px;
+  background-color: #BDD2F3;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.nav_dropdown p {
+  text-align: center;
+  padding-block-end: 10px;
+  margin: 0;
+}
+
+.nav_dropdown:hover {
+  background-color: #6A90CD;
+  cursor: pointer;
+}
+
 .header_title {
   font-size: 1rem;
   font-weight: bold;
@@ -35,7 +63,7 @@
   width: 100%;
 }
 
-.header_title button {
+.primary_button {
   background-color: #2964C0;
   border: none;
   color: #fff;
@@ -43,11 +71,16 @@
   font-weight: bold;
   padding: 0.8rem 1rem;
   border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
 
-.header_title button:hover{
+.primary_button:hover {
   background-color: #1f509e;
+}
+
+.primary_button:active {
+  box-shadow: none;
 }
 
 .nav_logo {
@@ -79,10 +112,13 @@
   color: #122D58;
 }
 
+.nav_user {
+  height: 100%;
+}
 .nav_account {
   color: #515151;
-  height: 100%;
   width: 220px;
+  height: 100%;
   border-radius: 5px;
   background: #BDD2F3;
   padding: 0 15px;
@@ -92,6 +128,7 @@
 
 .nav_account:hover {
   background: #96aed6;
+  cursor: pointer;
 }
 
 .nav_account p {
@@ -168,7 +205,6 @@
 
 .grid {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   max-width: 80%;
@@ -190,12 +226,34 @@
 .card h2 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
+  color: #122D58;
 }
 
 .card p {
   margin: 0;
   font-size: 1.25rem;
-  line-height: 1.5;
+  line-height: 1.2;
+}
+
+.card button {
+  width: 100%;
+  height: 40px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #2964C0;
+  border-radius: 5px;
+  border-style: none;
+  font-family: 'Ubuntu';
+  color: #fff;
+  font-size: 1rem;
+}
+
+.card button:hover {
+  cursor: pointer;
+  background-color: #1f509e;
+}
+
+.card button:active {
+  box-shadow: none;
 }
 
 .item_desc {
@@ -204,6 +262,16 @@
 
 .item_desc_text {
   padding-left: 10px;
+}
+
+.item_desc_text h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #063781;
+}
+
+.item_desc_text p {
+  font-size: 11pt;
 }
 
 .logo {
