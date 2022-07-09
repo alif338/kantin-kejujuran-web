@@ -1,9 +1,11 @@
-const { default: axios } = require('axios');
 require('dotenv').config();
+const connect = require('./backend/databases/connection');
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
+module.exports = (phase, { defaultConfig }) => {
+  connect();
+  /** @type {import('next').NextConfig} */
+  const nextConfig = {
+    reactStrictMode: true,
+  }
+  return nextConfig
 }
-
-module.exports = nextConfig
