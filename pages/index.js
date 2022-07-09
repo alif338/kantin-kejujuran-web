@@ -6,6 +6,7 @@ import Card from '../components/Card';
 import Header from '../components/Header';
 import styles from '../styles/Home.module.css'
 import { faker } from '@faker-js/faker';
+require('dotenv').config();
 
 export default function Home() {
   const [items, setItems] = useState([]);
@@ -19,7 +20,7 @@ export default function Home() {
       console.log(res.data.data);
       setItems(res.data.data);
     });
-    console.log(process.env.MONGODB_URL);
+    console.log(`URL mongodb: ${process.env.MONGODB_URL}`);
   }, []);
 
   const handleClick = () => {
