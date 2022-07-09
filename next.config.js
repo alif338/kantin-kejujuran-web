@@ -1,3 +1,4 @@
+const { default: axios } = require('axios');
 require('dotenv').config();
 const connect = require('./backend/databases/connection');
 
