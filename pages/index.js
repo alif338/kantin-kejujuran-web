@@ -1,24 +1,29 @@
 import axios from 'axios';
 import Head from 'next/head'
 import Image from 'next/image'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Card from '../components/Card';
 import Header from '../components/Header';
 import styles from '../styles/Home.module.css'
 import { faker } from '@faker-js/faker';
 
 export default function Home() {
+  const [items, setItems] = useState([]);
   useEffect(() => {
     // axios.get('/api/connectDB').then(res => {
     //   console.log(res.data.message);
     // }).catch(err => {
     //   console.log(err);
     // })
+    axios.get('/api/items').then(res => {
+      console.log(res.data.data);
+      setItems(res.data.data);
+    });
     console.log(process.env.MONGODB_URL);
   }, []);
 
   const handleClick = () => {
-    axios.post('/api/test_db', {
+    axios.post('/api/items/add', {
       name: `Item ${faker.lorem.slug()} created`,
       price: '$10000',
       description: faker.lorem.paragraph(),

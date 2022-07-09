@@ -1,4 +1,4 @@
-const Item = require('../../backend/databases/schemas/item_schema');
+const Item = require('../../../backend/databases/schemas/item_schema');
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
@@ -12,5 +12,4 @@ export default async function handler(req, res) {
   } else {
     res.status(400).json({ message: 'Bad Request' });
   }
-  
 }
