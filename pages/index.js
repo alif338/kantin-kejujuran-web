@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import Card from '../components/Card';
 import Header from '../components/Header';
 import styles from '../styles/Home.module.css'
+import { faker } from '@faker-js/faker';
 
 export default function Home() {
   // useEffect(() => {
@@ -17,11 +18,11 @@ export default function Home() {
 
   const handleClick = () => {
     axios.post('/api/test_db', {
-      name: 'Transaction 08/07/2022 Test Called second',
+      name: `Item ${faker.lorem.slug()} created`,
       price: '$10000',
-      description: 'This is a test transaction',
-      imageUrl: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
-      created_at: '2020-01-01'
+      description: faker.lorem.paragraph(),
+      imageUrl: faker.image.abstract(),
+      created_at:new Date().toLocaleDateString("en-US"),
     }, {headers: {'Content-Type': 'application/json'}}).then(res => {
       console.log(res.data);
     }).catch(err => {
