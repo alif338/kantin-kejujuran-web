@@ -10,11 +10,11 @@ import { faker } from '@faker-js/faker';
 export default function Home() {
   const [items, setItems] = useState([]);
   useEffect(() => {
-    // axios.get('/api/connectDB').then(res => {
-    //   console.log(res.data.message);
-    // }).catch(err => {
-    //   console.log(err);
-    // })
+    axios.get('/api/connectDB').then(res => {
+      console.log(res.data.message);
+    }).catch(err => {
+      console.log(err);
+    })
     axios.get('/api/items').then(res => {
       console.log(res.data.data);
       setItems(res.data.data);
