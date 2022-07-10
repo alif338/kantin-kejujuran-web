@@ -217,6 +217,9 @@
   background-color: #BDD2F3;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card h2 {

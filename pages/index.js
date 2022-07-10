@@ -19,18 +19,22 @@ export default function Home() {
       console.log(res.data.data);
       setItems(res.data.data);
     });
-    console.log(`URL mongodb: ${process.env.MONGODB_URL}`);
+    console.log(`URL mongodb: ${process.env.MONGODB_URI}`);
   }, []);
 
   const handleClick = () => {
     axios.post('/api/items/add', {
-      name: `Item ${faker.lorem.slug()} created`,
+      name: `${faker.lorem.slug()}`,
       price: '$10000',
-      description: faker.lorem.paragraph(),
+      description: faker.lorem.sentence(4),
       imageUrl: faker.image.abstract(),
       created_at:new Date().toLocaleDateString("en-US"),
     }, {headers: {'Content-Type': 'application/json'}}).then(res => {
       console.log(res.data);
+      axios.get('/api/items').then(res => {
+        console.log(res.data.data);
+        setItems(res.data.data);
+      });
     }).catch(err => {
       console.log(err);
     })
@@ -51,12 +55,10 @@ export default function Home() {
           <button className={styles.primary_button} onClick={handleClick}>+ Tambah item</button>
         </div>
         <div className={styles.grid}>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
+          {
+            items.length == 0 ? <h2>Loading...</h2> :
+            items.map(item => (<Card key={item._id} data={item}/>))
+          }
         </div>
       </main>
 
